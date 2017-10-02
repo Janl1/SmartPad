@@ -1,0 +1,171 @@
+.sidemodal-open {
+	overflow: hidden;
+}
+.sidemodal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	display: none;
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+}
+.sidemodal.fade .sidemodal-dialog {
+	right: -100%;
+	-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+	-moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+	-o-transition: opacity 0.3s linear, right 0.3s ease-out;
+	transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+.sidemodal.in .sidemodal-dialog {
+	right: 0;
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+.sidemodal-open .sidemodal {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.sidemodal-dialog {
+	position: fixed;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translate3d(0%, 0, 0);
+	-ms-transform: translate3d(0%, 0, 0);
+	-o-transform: translate3d(0%, 0, 0);
+	transform: translate3d(0%, 0, 0);
+}
+.sidemodal-content {
+	position: relative;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	outline: 0;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	
+	height: 100%;
+	overflow-y: auto;
+}
+.sidemodal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000;
+}
+.sidemodal-backdrop.fade {
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+.sidemodal-backdrop.in {
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+.sidemodal-header {
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.sidemodal-header .close {
+	margin-top: -2px;
+}
+.sidemodal-title {
+	margin: 0;
+	line-height: 1.42857143;
+}
+.sidemodal-body {
+	position: relative;
+	padding: 15px 15px 80px;
+}
+.sidemodal-footer {
+	padding: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5;
+}
+.sidemodal-footer .btn + .btn {
+	margin-bottom: 0;
+	margin-left: 5px;
+}
+.sidemodal-footer .btn-group .btn + .btn {
+	margin-left: -1px;
+}
+.sidemodal-footer .btn-block + .btn-block {
+	margin-left: 0;
+}
+.sidemodal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+@media (min-width: 768px) {
+	.sidemodal-dialog {
+		width: 50%;
+	}
+	.sidemodal-content {
+		-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	}
+	.sidemodal-sm {
+		width: 50%;
+	}
+}
+@media (min-width: 992px) {
+	.sidemodal-lg {
+		width: 50%;
+	}
+}
+
+.sidemodal-header:before,
+.sidemodal-header:after,
+.sidemodal-footer:before,
+.sidemodal-footer:after {
+	display: table;
+	content: " ";
+}
+
+.sidemodal-header:after,
+.sidemodal-footer:after {
+	clear: both;
+}
+
+.glyphicon-sidemodal-window:before {
+	content: "\e237";
+}
+
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	filter: alpha(opacity=20);
+	opacity: .2;
+}
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+button.close {
+	-webkit-appearance: none;
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+}
