@@ -19,6 +19,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/', 'HomeController@index')->name('home');
 
+	//ACP
+	Route::get('/acp/user/info/{id}', 'AcpController@userInfo')->name('userInfo');
+	Route::post('/acp/user/edit/{id}', 'AcpController@userEdit')->name('userEdit');
+
+	Route::get('/acp/users', 'AcpController@users')->name('users');
+	Route::get('/acp/logs', 'AcpController@logs')->name('logs');
+	Route::get('/acp/trash', 'AcpController@trash')->name('trash');
+
 	// Pads
 	Route::post('/pad/create', 'PadController@create')->name('create');
 	Route::post('/pad/archive', 'PadController@archive')->name('archive');

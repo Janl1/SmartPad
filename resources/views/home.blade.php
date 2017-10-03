@@ -31,7 +31,7 @@
                     <div class="list-group">
                         @foreach(Pad::where('status', 'ACTIVE')->orderBy('id', 'desc')->get() as $pad)
                             <a onclick="openInfoPad('{{ $pad->slug }}');" class="list-group-item">
-                                <h4 class="list-group-item-heading">{{ $pad->heading }}</h4>
+                                <h4 class="list-group-item-heading">@if($pad->password == "NULL") <i class="fa fa-unlock"></i> @else <i class="fa fa-lock"></i> @endif{{ $pad->heading }}</h4>
                                 <p class="list-group-item-text">Author: {{ User::findOrFail($pad->user_id)->name }} | {{ $pad->created_at }}</p>
                             </a>
                         @endforeach
@@ -50,7 +50,7 @@
                     <div class="list-group">
                         @foreach(Pad::where('status', 'ARCHIVED')->orderBy('id', 'desc')->get() as $pad)
                             <a onclick="openInfoPad('{{ $pad->slug }}');" class="list-group-item">
-                                <h4 class="list-group-item-heading">{{ $pad->heading }}</h4>
+                                <h4 class="list-group-item-heading">@if($pad->password == "NULL") <i class="fa fa-unlock"></i> @else <i class="fa fa-lock"></i> @endif{{ $pad->heading }}</h4>
                                 <p class="list-group-item-text">Author: {{ User::findOrFail($pad->user_id)->name }} | {{ $pad->created_at }}</p>
                             </a>
                         @endforeach
