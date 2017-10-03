@@ -32,4 +32,13 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Pad');
     }
+
+    public function isAdmin()
+    {
+        if($this->status == "ADMIN") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

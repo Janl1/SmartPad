@@ -9,6 +9,6 @@
 
 return  [
  
-    'FireBase_apiKey' => "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    'FireBase_databaseURL' => "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    'FireBase_apiKey' => "AIzaSyDovLbcVw7n0YcSeKUaohWeZHrViOHd674",
+    'FireBase_databaseURL' => "https://smartpad-86cb7.firebaseio.com"
 ];

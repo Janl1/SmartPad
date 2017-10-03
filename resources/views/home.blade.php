@@ -105,9 +105,10 @@
         <strong>Heading: </strong><span id="infoPadHeading2"></span><br>
         <strong>Creation date: </strong><span id="infoPadCreatedAt"></span><br>
         <strong>Last visit: </strong><span id="infoPadUpdatedAt"></span><br>
-        <strong>Total visits: </strong><span id="infoPadVisits"></span><br><hr><br>
+        <strong>Total visits: </strong><span id="infoPadVisits"></span><br>
+        <strong>Password: </strong><span id="infoPadPassword"></span><br><hr><br>
 
-        <a id="linkPadOpen" class="btn btn-sm btn-info">Open pad</a> <a id="linkPadArchive" class="btn btn-sm btn-warning">Archive pad</a> <a id="linkPadDelete" class="btn btn-sm btn-danger">Delete pad</a>
+        <a id="linkPadOpen" class="btn btn-sm btn-info">Open pad</a> <a id="linkPadArchive" class="btn btn-sm btn-warning">Archive pad (Toggle)</a> <a id="linkPadDelete" class="btn btn-sm btn-danger">Delete pad</a>
 
       </div>
       <div class="sidemodal-footer">
@@ -213,6 +214,11 @@
             $('#infoPadCreatedAt').html(info.created_at);
             $('#infoPadUpdatedAt').html(info.updated_at);
             $('#infoPadVisits').html(info.clicks);
+            if(info.password == "NULL") {
+              $('#infoPadPassword').html("No");
+            } else {
+              $('#infoPadPassword').html("Yes");
+            }
             $('#modal_info').sidemodal('toggle');
 
             $("#linkPadOpen").attr("href", "{{ url('/pad/open/') }}/" + info.slug);

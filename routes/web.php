@@ -25,6 +25,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/pad/delete', 'PadController@delete')->name('delete');
 	
 	Route::get('/pad/info/{slug}', 'PadController@info')->name('info');
+	Route::get('/pad/open/{slug}', 'PadController@open')->name('open');
+	Route::get('/pad/password/{slug}', 'PadController@password')->name('password');
+	Route::post('/pad/password/{slug}', 'PadController@password')->name('password');
 	
 });
 

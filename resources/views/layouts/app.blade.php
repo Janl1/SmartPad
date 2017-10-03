@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" style="height: 100% !important;">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,6 +102,14 @@
                     {{ session('info') }}
                 </div>
             @endif
+
+            
+            @if (Auth::check() && Auth::user()->isAdmin() && (config('smartpad.FireBase_apiKey') == "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" || config('smartpad.FireBase_databaseURL') == "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"))
+                <div class="alert alert-warning">
+                    Please finish the configuration of config/smartpad.php!
+                </div>
+            @endif
+           
         </div>
 
         @yield('content')
